@@ -18,15 +18,19 @@
  */
 // write your code here
 
-
-
+var dictionaryBandBestAlbum = [
+    "Nirvana"       : "Nevermind",
+    "Blondie"       : "Parallel Lines",
+    "The Kinks"     : "Low Budget",
+    "The Beatles"   : "Sgt. Pepper's Lonely Hearts Club Band"
+]
 
 /*: question2
  ### 2. Oops, we forgot an album! Add the Pixie's _Doolittle_ to the dictionary you created in Question 1.
  */
 // write your code here
 
-
+dictionaryBandBestAlbum["Pixie's"] = "Doolittle"
 
 
 /*: question3
@@ -34,38 +38,44 @@
  */
 // write your code here
 
-
-
-
+dictionaryBandBestAlbum.removeValueForKey("The Kinks")
+print(dictionaryBandBestAlbum)
 
 /*: question4
  ### 4. A band name has been defined in the constant `bandName` below. Using this constant and the dictionary you created in Question 1, print "<Band>'s top-selling album was <Album>" to the console.
  */
 let bandName = "Nirvana"
 // write your code here
-
-
-
+let album = dictionaryBandBestAlbum[bandName]
+if let album = album {
+    print("\(bandName)'s top-selling album was \(album)")
+}
 
 /*: question5
  ### 5. Iterate over the dictionary you created in Question 1 and print "<Band>'s top-selling album was <Album>" for each item in the dictionary.
  */
 // write your code here
-
+for (band, albom) in dictionaryBandBestAlbum {
+    print("\(band)'s top-selling album was \(albom)")
+}
 
 
 
 /*: question6
  ### 6. What type of data structure is returned when you iterate over a dictionary?
  */
-
-
-
+// tuple
 
 /*: question7
  ### 7. Imagine every student in every grade in a high school took an exam. Each student got a letter grade based on their test results (A, B, C, D, and F). The results were averaged together per grade. How could you represent this mapping of grades to exam average?
  */
-
+var dictionaryGradeResults = [
+    "A" : 12,
+    "B" : 23,
+    "C" : 3,
+    "D" : 1,
+    "F" : 0
+]
 
 
 
@@ -79,7 +89,12 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+var dictionaryResultsGrade = [
+    9   : "B",
+    10  : "A",
+    11  : "C",
+    12  : "B"
+]
 
 
 /*: question9
@@ -87,7 +102,9 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+for (grade, score) in dictionaryResultsGrade {
+    print("Grade \(grade) got \(score)")
+}
 
 
 /*: question10
@@ -95,7 +112,15 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+var bestGrade = 0
+var highestScore = "F"
+for (grade, score) in dictionaryResultsGrade {
+    if score < highestScore {
+        bestGrade = grade
+        highestScore = score
+    }
+}
+print("\(bestGrade) got \(highestScore)")
 
 
 /*:
